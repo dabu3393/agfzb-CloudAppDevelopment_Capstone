@@ -1,0 +1,24 @@
+{% extends 'djangoapp/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <form class="form-signin" action="{% url 'djangoapp:login' %}" method="post">
+        {% csrf_token %}
+        <div class="text-center mb-4">
+            <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+        </div>
+
+        <div class="form-label-group">
+            <input type="text" id="username" name="username" class="form-control" placeholder="User Name" required autofocus>
+            <label for="username">User Name</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+            <label for="password">Password</label>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+{% endblock %}
