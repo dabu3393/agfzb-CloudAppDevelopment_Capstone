@@ -57,7 +57,7 @@ def registration_request(request):
             login(request, user)
             return redirect('djangoapp:index')
         else:
-            print("Here are the errors: ", form.errors)
+            print("Here are the errors", form.errors)
     else:
         form = UserCreationForm()
     
